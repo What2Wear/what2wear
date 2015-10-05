@@ -8,3 +8,5 @@ Use the following syntax:
 	    'accountSid':'twilio account id',
 	    'authToken':'twilio auth token'
     };
+
+and _that's_ it! That's all you need in the `config.js` file.
