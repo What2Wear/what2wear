@@ -1,7 +1,3 @@
-// Your accountSid and authToken from twilio.com/user/account
-var accountSid = 'ACee327ef099cd64a7a2bbe1d3de1c7693';
-var authToken = "9d28c4c4f87c1cb08204de6102ca191b";
-var client = require('twilio')(accountSid, authToken);
 
 var express = require('express');
 var path = require('path');
@@ -13,7 +9,9 @@ var http = require('http');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var config = require('./config');
 
+var client = require('twilio')(config.accountSid, config.authToken);
 var app = express();
 
 // view engine setup
