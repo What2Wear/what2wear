@@ -97,9 +97,10 @@ app.post('/request', function(req, res, next){
       console.log(str);
       // res.send(JSON.parse(str));
       var data = JSON.parse(str);
-      var tID = data.weather.id;
+      var tID = data.weather[0].id;
       var temp = data.main.temp;
-      var fTemp = (temp*9/5) - 459.67;
+      var main = data.weather[0].main;
+      var fTemp = Math.floor((temp*9/5) - 459.67);
       var comfortState = temperature(fTemp);
 
       var r = false;
@@ -122,7 +123,7 @@ app.post('/request', function(req, res, next){
       var w = w2w(comfortState, r, s, sun);
 
       client.messages.create({
-          body: "Thanks! "+ w + " | " + fTemp,
+          body: "Thanks! "+ w + " | " + fTemp + " | " + main + " | " + tID,
           to: from,
           from: "+13313056064"
       }, function(err, message) {
