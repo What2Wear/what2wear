@@ -121,11 +121,12 @@ app.post('/request', function(req, res, next){
       var w = w2w(comfortState, r, s, sun);
 
       client.messages.create({
-          body: "Thanks! "+ w + " | " + fTemp + " | " + main + " | " + tID,
+          body: "Thanks! \n| "+ w + "\n| " + fTemp + "\n| " + main + "\n| " + tID,
           to: from,
           from: "+13313056064"
       }, function(err, message) {
           process.stdout.write(message.sid);
+          console.log("\ndone\n");
       });
       res.write('done');
       res.end();
