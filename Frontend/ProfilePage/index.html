@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- CHANGE TITLE AND META ACCORDINGLY -->
+		<title>Welcome to What to Wear</title>
+		<meta name="theme-color" content="#ffffff">
+		<meta content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes" name="viewport">
+	  	<link rel="stylesheet" href="css/tidy.css">
+		<link rel="stylesheet" href="css/animate.css">	
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> 
+
+		<link href="//cdn.rawgit.com/noelboss/featherlight/1.3.2/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />	
+		<link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+		<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+        <script src="//cdn.rawgit.com/noelboss/featherlight/1.3.2/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		
+		<style>
+			.navbar-inverse{
+				opacity: 0.90;
+				background-color: "#333333";
+			}
+			body { margin-top:30px; }
+			#login-nav input { margin-bottom: 15px; }
+		</style>
+	</head>
+	
+
+
+	<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+      			</button style="active">
+      			<a class="navbar-brand" href="#">W2W</a>
+    		</div>
+    
+    		<div class="collapse navbar-collapse" id="myNavbar">
+      			<ul class="nav navbar-nav">
+        			<li><a href="#">My</a></li>
+        			<li><a href="#">Trend</a></li>
+        			<li><a href="#">Help</a></li>
+    			 </ul>
+
+      			 <ul class="nav navbar-nav navbar-right navbar-inverse" style="background-color:'#333333';">
+                  <li><a href="#">Sign Up</a></li>
+                  <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
+                     <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                        <li>
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                    <div class="form-group">
+                                       <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                       <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                    </div>
+                                    <div class="form-group">
+                                       <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                       <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                    </div>
+                                    <div class="checkbox">
+                                       <label><input type="checkbox"> Remember me</label>
+                                    </div>
+                                    <div class="form-group">
+                                       <button type="submit" class="btn btn-success btn-block">Sign in</button>
+                                    </div>
+                                    <div>
+                                    	<a href="#">Forget Password ?</a>
+                                 	</div>
+</form>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li><input class="btn btn-primary btn-block" type="button" id="sign-in-facebook" value="Sign In with Facebook"></li>
+                     </ul>
+                  </li>
+               </ul>
+    	</div>
+
+  		</div>
+	</nav>
+
+			<!-- COVER IMAGE AND FLOATING BUTTON 	-->
+			<div class="cover-image"></div>
+			
+			<!-- MAIN BODY -->
+			<div class="wow fadeInUp content-card">
+            		<div class="profileImage">
+                    <!--TO BE REPLACED WITH PROFILE IMAGE FROM DATABASE-->
+                    	<img src="Assets/default_avatar.png" width="200" height="266.6667">
+                    </div>
+                    
+                    <div class="profileInfo">
+                        <!--INFO TO BE FILLED IN WITH DATABASE-->
+                    	<h5>Name: </h5>
+                        <h5>Location: </h5>
+                        <h5>Gender: </h5>
+                        <h5>Phone: </h5>
+                        <br>
+                        <h4>Today's weather will be: </h4>
+                        <!--WEATHER INFO WILL BE CALLED AND CORRECT TEXT AND GRAPHIC FOR WEATHER WILL BE DISPLAYED BELOW-->
+                        
+                    </div>
+                    
+					<div id="dummy" style="clear:both"></div>
+                    <br><br><br><br>
+
+                    <h2>Based off of the following information, you should wear...</h2>
+                    <br><br><br>
+
+					<div class="clothingSelection">
+						<h3>Torso</h3>
+                        <!--DATABASE INTEGRATION HERE FOR TEXT AND IMAGE-->
+						<p>Sed tempus feugiat adipiscing nisl cursus aliquam dolore.</p>
+					</div>
+					<div class="clothingSelection">
+						<h3>Legs</h3>
+                        <!--DATABASE INTEGRATION HERE FOR TEXT AND IMAGE-->
+						<p>Sed tempus feugiat adipiscing nisl cursus aliquam dolore.</p>
+					</div>
+					<div class="clothingSelection">
+						<h3>Extra</h3>
+                        <!--DATABASE INTEGRATION HERE FOR TEXT AND IMAGE-->
+						<p>Sed tempus feugiat adipiscing nisl cursus aliquam dolore.</p>
+					</div>
+			</div>
+		
+		<!-- SPACE BELOW DETAILS -->	
+		<div class="empty-space">
+			<div class="meta-container wow fadeInUp">
+				<div class="wow fadeInUp detail-item watermark credits">
+						<span class="text-description credits-text" style="color: #ffffff"> 2015 CS196 @ UIUC - <a href="http://cs196.xyz" style="color: #fff; font-weight: 700"> W2W Team</a></span>
+				</div>
+			</div>	
+		</div>
+		
+
+		<!-- ============= -->
+			
+		<!-- JAVASCRIPT -->
+		
+		<!-- Animations -->
+		<script src="js/wow.min.js"></script>
+		<script>
+			new WOW().init();
+		</script>
+		
+		<!-- Scrollwheel Smoothing -->
+		<script>
+			$(function()
+			{	
+				var $window = $(window);
+				var scrollTime = 0.2;
+				var scrollDistance = 270;
+				$window.on("mousewheel DOMMouseScroll", function(event)
+				{
+	
+					event.preventDefault();	
+					var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+					var scrollTop = $window.scrollTop();
+					var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+					TweenMax.to($window, scrollTime, 
+					{
+						scrollTo : { y: finalScroll, autoKill:true }, ease: Power1.easeOut, overwrite: 5	 
+						
+					});
+				});
+			});
+		</script>
+
+
+	</body>
+</html>	
