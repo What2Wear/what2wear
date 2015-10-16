@@ -66,6 +66,16 @@ a:active
 	color: #333;
 }
 
+h1
+{
+	text-align:center;
+}
+
+h2
+{
+	text-align:center;
+}
+
 .content-card	
 {
 	width: 60%; 
@@ -276,6 +286,7 @@ a:active
 	border-style:solid;
 	float:left;
 	width:33.333333%;
+	text-align:center;
 }
 
 .profileImage
@@ -291,6 +302,10 @@ a:active
 	text-align:left;
 }
 
+.formatting
+{
+	clear:both;
+}
 @media (min-width: 800px) and (max-width: 1100px) 
 {
     .content-card, .content-works

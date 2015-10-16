@@ -37,6 +37,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<body>
+    
+    <!--INCLUDE EJS JS CAPABILITIES -->
+    <script type="text/javascript" src="ejs/ejs_production.js"></script>
+    
 	<nav class="navbar navbar-inverse navbar-fixed-top">
   		<div class="container-fluid">
     		<div class="navbar-header">
@@ -100,6 +104,9 @@
 			
 			<!-- MAIN BODY -->
 			<div class="wow fadeInUp content-card">
+            		<h1>Let's start off the day right!</h1>
+                    <br>
+                    <h2>Let's review some of the information you entered</h2>
             		<div class="profileImage">
                     <!--TO BE REPLACED WITH PROFILE IMAGE FROM DATABASE-->
                     	<img src="Assets/default_avatar.png" width="200" height="266.6667">
@@ -107,37 +114,44 @@
                     
                     <div class="profileInfo">
                         <!--INFO TO BE FILLED IN WITH DATABASE-->
-                    	<h5>Name: </h5>
-                        <h5>Location: </h5>
-                        <h5>Gender: </h5>
-                        <h5>Phone: </h5>
-                        <br>
-                        <h4>Today's weather will be: </h4>
-                        <!--WEATHER INFO WILL BE CALLED AND CORRECT TEXT AND GRAPHIC FOR WEATHER WILL BE DISPLAYED BELOW-->
-                        
+                    	<h4>Name: </h4>
+                        <h4>Location: </h4>
+                        <h4>Gender: </h4>
+                        <h4>Phone: </h4>
+                        <br><br><br>
                     </div>
                     
-					<div id="dummy" style="clear:both"></div>
-                    <br><br><br><br>
+					<div class="formatting"></div>
+                    <h2>Today's weather will be: </h2>
+					<br><br>
 
-                    <h2>Based off of the following information, you should wear...</h2>
+                    <!-- WEATHER WIDGET -->
+                    <!-- TODO: FIND BETTER WIDGET WHICH SHOWS ENTIRE DAY'S WEATHER AND NOT CURRENT -->
+                    <a href="http://www.accuweather.com/en/us/champaign-il/61820/weather-forecast/328774" class="aw-widget-legal">
+					</a><div id="awcc1444954753013" class="aw-widget-current"  data-locationkey="" data-unit="f" data-language="en-us" data-useip="true" 	
+                    data-uid="awcc1444954753013"></div><script type="text/javascript" src="http://oap.accuweather.com/launch.js"></script>
+                    
+                    <br><br>
+                    <h2>And based off of the following information, you should wear...</h2>
                     <br><br><br>
 
 					<div class="clothingSelection">
 						<h3>Torso</h3>
-                        <!--DATABASE INTEGRATION HERE FOR TEXT AND IMAGE-->
-						<p>Sed tempus feugiat adipiscing nisl cursus aliquam dolore.</p>
+                        <!--DATABASE INTEGRATION HERE FOR TEXT-->
+						<p>$PLACEHOLDER$</p>
 					</div>
 					<div class="clothingSelection">
 						<h3>Legs</h3>
-                        <!--DATABASE INTEGRATION HERE FOR TEXT AND IMAGE-->
-						<p>Sed tempus feugiat adipiscing nisl cursus aliquam dolore.</p>
+                        <!--DATABASE INTEGRATION HERE FOR TEXT-->
+						<p>$PLACEHOLDER$</p>
 					</div>
 					<div class="clothingSelection">
 						<h3>Extra</h3>
-                        <!--DATABASE INTEGRATION HERE FOR TEXT AND IMAGE-->
-						<p>Sed tempus feugiat adipiscing nisl cursus aliquam dolore.</p>
+                        <!--DATABASE INTEGRATION HERE FOR TEXT-->
+						<p>$PLACEHOLDER$</p>
 					</div>
+                    <div class="formatting"></div>
+                    
 			</div>
 		
 		<!-- SPACE BELOW DETAILS -->	
