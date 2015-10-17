@@ -289,6 +289,40 @@ h2
 	text-align:center;
 }
 
+.torsoSelection
+{
+	padding:50px;
+	border-style:solid;
+	float:left;
+	width:33.333333%;
+	text-align:center;
+	background-image:url(../Assets/shirtBackground.png);
+	background-size:cover;
+}
+
+.legSelection
+{
+	padding:50px;
+	border-style:solid;
+	float:left;
+	width:33.333333%;
+	text-align:center;
+	background-image:url(../Assets/pantsBackground.png);
+	background-size:cover;
+
+}
+
+.extraSelection
+{
+	padding:50px;
+	border-style:solid;
+	float:left;
+	width:33.333333%;
+	text-align:center;
+	background-image:url(../Assets/accessoryBackground.png);
+	background-size:cover;
+}
+
 .profileImage
 {
 	padding:15px;
