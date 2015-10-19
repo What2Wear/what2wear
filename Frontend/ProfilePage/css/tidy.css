@@ -340,6 +340,14 @@ h2
 {
 	clear:both;
 }
+
+.presentationBasic
+{
+	padding:50px;
+	border-style:solid;
+	text-align:center;
+}
+
 @media (min-width: 800px) and (max-width: 1100px) 
 {
     .content-card, .content-works
