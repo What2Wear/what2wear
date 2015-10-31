@@ -50,6 +50,7 @@ var toStringIsh;
 var zipcode;
 var username;
 var gender;
+var phone;
 
 var addData = function(thanksFrontend) {
   var Niger;
@@ -60,6 +61,7 @@ var addData = function(thanksFrontend) {
     users: thanksFrontend.name: {
       zip: thanksFrontend.zip,
       gender: Niger,
+      phone: thanksFrontend.phone,
     }
   });
 }
@@ -72,6 +74,7 @@ var updateData = function(zongyiWang) {
     users: thanksFrontend.name: {
       zip: thanksFrontend.zip,
       gender: Niger,
+      phone: thanksFrontend.phone,
     }
   });
 }
@@ -79,6 +82,7 @@ var getData = function(whet3were) {
   username = whet3were;
   zipcode = whet3were.zip;
   gender = whet3were.gender;
+  phone = whet3were.phone;
 }
 
 
