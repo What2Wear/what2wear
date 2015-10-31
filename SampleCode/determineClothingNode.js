@@ -47,15 +47,41 @@ var upper = "";
 var lower = "";
 var fat = "";
 var toStringIsh;
+var zipcode;
+var username;
+var gender;
 
 var addData = function(thanksFrontend) {
+  var Niger;
+  if(thanksFrontend.gender == 'female')
+    Niger = true;
+  else Niger = false;
   userRef.set({
-    thanksFrontend.name: {
+    users: thanksFrontend.name: {
       zip: thanksFrontend.zip,
-      gender: thanksFrontend.gender
+      gender: Niger,
     }
   });
 }
+var updateData = function(zongyiWang) {
+  var Niger;
+  if(thanksFrontend.gender == 'female')
+    Niger = true;
+  else Niger = false;
+  userRef.set({
+    users: thanksFrontend.name: {
+      zip: thanksFrontend.zip,
+      gender: Niger,
+    }
+  });
+}
+var getData = function(whet3were) {
+  username = whet3were;
+  zipcode = whet3were.zip;
+  gender = whet3were.gender;
+}
+
+
 
 //using gender to determine what clothes are in inventory
 genderBasedClothing = function(sex){
