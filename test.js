@@ -35,7 +35,7 @@ app.set('port', process.env.PORT || 3000);
 app.use('/', routes);
 app.use('/users', users)
 
-var userRef = ref.child("users");
+// var userRef = ref.child("users");
 var d = new Date();
 var numberOfWeek = d.getDay(); //should give day of the week;
 var top = ["short-sleeved t-shirt", "shirt", "long-sleeved t-shirt"];
@@ -62,7 +62,7 @@ app.post("/addData", function(req, res, next){
   var zip = req.body.zip;
   var phone = req.body.phone;
 
-  MongoCLient.connect(MONGO_URL, function(err, db){
+  MongoClient.connect(MONGO_URL, function(err, db){
     if (err) throw err;
     console.log("Mongo connected.");
 
@@ -150,7 +150,7 @@ var stri = function(){
   var eee = "";
   if (lower != "" && fat != "")
     eee = ("Wear: "+upper+", "+lower+", and "+fat)+"\n";
-  else if(lower == "" && fat == "") 
+  else if(lower == "" && fat == "")
     eee = ("Wear: "+upper)+"\n";
   else if(lower == "")
     eee = ("Wear: "+upper+" and "+fat)+"\n";
@@ -171,7 +171,7 @@ w2w = function(){
   }
   //determines where each type of clothing is worn
   {
-    for(var i = 0; i < dayOfTheWeekRules[numberOfWeek].length; i++){  
+    for(var i = 0; i < dayOfTheWeekRules[numberOfWeek].length; i++){
       for(var j = 0; j < bottom.length; j++){
         if(dayOfTheWeekRules[numberOfWeek][i] == bottom[j])
           dayOfTheWeekRules[numberOfWeek][i] += ": bottom";
@@ -197,7 +197,7 @@ w2w = function(){
         top[i] += ": warm hot";
       else if(top[i] == "dress")
         top[i] += ": hot";
-    } 
+    }
     for(var i = 0; i < thick.length; i++){
       if(thick[i] == "winter coat")
         thick[i] += ": cold";
@@ -281,7 +281,7 @@ app.post('/request', function(req, res, next){
   var from = req.body.From;
   console.log('From: ' + from + ', Message: ' + message);
   // var twiml = '<?xml version="1.0" encoding="UTF-8" ?>n<Response>n<Sms>Thanks for your text, we\'ll be in touch.</Sms>n</Response>';
-   
+
   // res.send(twiml, {'Content-Type':'text/xml'}, 200);
 
   // assume they send a zipcode
@@ -405,7 +405,7 @@ app.use(function(err, req, res, next) {
 });
 
 
- 
+
 // client.messages.create({
 //     body: "MESSAGE FROM TWILIO!",
 //     to: "+16303037034",
