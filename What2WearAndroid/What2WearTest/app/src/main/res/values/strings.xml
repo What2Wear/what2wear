@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">What2WearTest</string>
+    <string name="action_settings">Settings</string>
+    <string name="button">Get Started!</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>
