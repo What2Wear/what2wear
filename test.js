@@ -35,32 +35,14 @@ app.set('port', process.env.PORT || 3000);
 app.use('/', routes);
 app.use('/users', users)
 
-var userRef = ref.child("users");
-var d = new Date();
-var numberOfWeek = d.getDay(); //should give day of the week;
-var top = ["short-sleeved t-shirt", "shirt", "long-sleeved t-shirt"];
-var thick = ["winter coat", "light jacket", "hoodie", "sweater"];
-var bottom = ["pants", "shorts", "jeans"];
-var dayOfTheWeekRules = [[],[],[],[],[],[],[]];
-var comfortableTemperatureRules = [55, 70, 77, 83];
-var numberOfWeek;
-var extras;
-var rulesOfDay;
-var temp;
-var upper = "";
-var lower = "";
-var fat = "";
-var toStringIsh;
-var zipcode;
-var username;
-var gender;
-var phone;
+//var userRef = ref.child("users");
 
 app.post("/addData", function(req, res, next){
   var username = req.body.username;
   var gender = req.body.gender;
   var zip = req.body.zip;
   var phone = req.body.phone;
+  var password = req.body.password;
 
   MongoCLient.connect(MONGO_URL, function(err, db){
     if (err) throw err;
@@ -72,7 +54,8 @@ app.post("/addData", function(req, res, next){
       username: username,
       gender: gender,
       zip: zip,
-      phone: phone
+      phone: phone,
+      password: password
     }, function(err, result){
       if (err) throw err;
       console.log(result);
@@ -161,6 +144,25 @@ var stri = function(){
 w2w = function(){
   //assigning of variables
   {
+    var d = new Date();
+    var numberOfWeek = d.getDay(); //should give day of the week;
+    var top = ["short-sleeved t-shirt", "shirt", "long-sleeved t-shirt"];
+    var thick = ["winter coat", "light jacket", "hoodie", "sweater"];
+    var bottom = ["pants", "shorts", "jeans"];
+    var dayOfTheWeekRules = [[],[],[],[],[],[],[]];
+    var comfortableTemperatureRules = [55, 70, 77, 83];
+    var numberOfWeek;
+    var extras;
+    var rulesOfDay;
+    var temp;
+    var upper = "";
+    var lower = "";
+    var fat = "";
+    var toStringIsh;
+    var zipcode;
+    var username;
+    var gender;
+    var phone;
     var u = false;
     var l = false;
     var f = false;
