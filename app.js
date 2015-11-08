@@ -1,4 +1,3 @@
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -70,7 +69,7 @@ app.post('/request', function(req, res, next){
   var from = req.body.From;
   console.log('From: ' + from + ', Message: ' + message);
   // var twiml = '<?xml version="1.0" encoding="UTF-8" ?>n<Response>n<Sms>Thanks for your text, we\'ll be in touch.</Sms>n</Response>';
-   
+
   // res.send(twiml, {'Content-Type':'text/xml'}, 200);
 
   // assume they send a zipcode
@@ -194,7 +193,7 @@ app.use(function(err, req, res, next) {
 });
 
 
- 
+
 // client.messages.create({
 //     body: "MESSAGE FROM TWILIO!",
 //     to: "+16303037034",
