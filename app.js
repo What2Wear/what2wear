@@ -77,7 +77,7 @@ app.post('/request', function(req, res, next){
   // var reqPath = "/data/2.5/weather?zip=61801,us";
   var options = {
     host: 'api.openweathermap.org',
-    path: '/data/2.5/weather?zip='+message+',us'
+    path: '/data/2.5/weather?zip='+message+',us&APPID=fcea7f4623776b63cfdc51b2fab81310'
   };
 
   callback = function(response)

@@ -107,7 +107,7 @@ genderBasedClothing = function(sex){
   }
 }
 //assigns temp condition in string to temp
-var getTemp = function(a, b){
+getTemp = function(a, b){
   if(a < b[0])
       return "cold";
     else if(a < b[1])
@@ -119,7 +119,7 @@ var getTemp = function(a, b){
     else return "hot";
 }
 //decides what assessories to bring
-var getExtras = function(r, s, sun){
+getExtras = function(r, s, sun){
     var e = "";
     if(r) e += "Bring: umbrella"+"\n";
     if(s) e += "Bring: snow boots"+"\n";
@@ -127,7 +127,7 @@ var getExtras = function(r, s, sun){
     return e;
 }
 //actual string at the end
-var stri = function(){
+stri = function(){
   var eee = "";
   if (lower != "" && fat != "")
     eee = ("Wear: "+upper+", "+lower+", and "+fat)+"\n";
@@ -275,6 +275,41 @@ w2w = function(){
   toStringIsh = stri();
 }
 
+temperature_old = function(temp){
+  this.temp = temp;
+  if(temp < 45)
+    return "cold";
+  else if(temp < 65)
+    return "chilly";
+  else if(temp < 70)
+    return "comf";
+  else if(temp < 80)
+    return "warm";
+  else return "hot";
+}
+
+w2w_old = function(temp, rain, snow, sunny) {
+    this.temp = temp;
+    this.rain = rain;
+    this.snow = snow;
+    this.sunny = sunny;
+  var total;
+  if(temp == "cold")
+    total = "Wear: Jeans, Long Sleeved T-Shirt, and a Winter Coat";
+  else if(temp == "chilly")
+    total = "Wear: Jeans, Long Sleeved T-Shirt, and a Light/Fall Jacket";
+  else if(temp == "comf")
+    total = "Wear: Pants, Short Sleeved T-Shirt, and a Hoodie";
+  else if(temp == "warm")
+    total = "Wear: Pants and Short Sleeved T-Shirt";
+  else if(temp == "hot")
+    total = "Wear: Shorts and a Short Sleeved T-Shirt";
+  if(rain) total += "\n"+"Bring: Umbrella";
+  if(snow) total += "\n"+"Bring: Snow Boots";
+  if(sunny) total += "\n"+"Bring: Sunglasses";
+  return total;
+}
+
 
 app.post('/request', function(req, res, next){
   var message = req.body.Body;
@@ -289,7 +324,7 @@ app.post('/request', function(req, res, next){
   // var reqPath = "/data/2.5/weather?zip=61801,us";
   var options = {
     host: 'api.openweathermap.org',
-    path: '/data/2.5/weather?zip='+message+',us'
+    path: '/data/2.5/weather?zip='+message+',us&APPID=fcea7f4623776b63cfdc51b2fab81310'
   };
 
   callback = function(response)
@@ -310,7 +345,7 @@ app.post('/request', function(req, res, next){
       var tempu = data.main.temp;
       var main = data.weather[0].main;
       var fTemp = Math.floor((tempu*9/5) - 459.67);
-      var comfortState = getTemp(fTemp);
+      var comfortState = temperature_old(fTemp);
 
       var r = false;
       var s = false;
@@ -329,10 +364,10 @@ app.post('/request', function(req, res, next){
         r = true;
       }
 
-      w2w();
+      var w = w2w_old(comfortState, r, s, sun);
 
       client.messages.create({
-          body: "Thanks! \n| "+ toStringIsh + "\n| " + fTemp + "\n| " + main + "\n| " + tID,
+          body: "Thanks! \n| "+ w + "\n| " + fTemp + "\n| " + main + "\n| " + tID,
           to: from,
           from: "+13313056064"
       }, function(err, message) {
