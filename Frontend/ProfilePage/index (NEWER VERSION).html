@@ -115,13 +115,10 @@
                     
                     <div class="profileInfo">
                         <!--INFO TO BE FILLED IN WITH DATABASE-->
-                    	<h4>Name: <%= users.name %></h4>
-                        <h4>Location: <%= users.name.location %></h4>
-                        <% if (users.name.gender) {var a = "female";} %>
-                        <h4>Gender: <%= a %></h4>
-                        <% else {var a = "male";}%>
-                        <h4>Gender: <%= a %></h4>
-                        <h4>Phone: <%= users.name.phone %></h4>
+                    	<h4>Name: <%= collection.username %></h4>
+                        <h4>Location: <%= collection.zip %></h4>
+                        <h4>Gender: <%= collection.gender %></h4>
+                        <h4>Phone: <%= collection.phone %></h4>
                         <br><br><br>
                     </div>
                     
