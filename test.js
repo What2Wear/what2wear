@@ -26,14 +26,25 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
+// app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('port', process.env.PORT || 3000);
 
-app.use('/', routes);
-app.use('/users', users)
+// app.use('/', routes);
+// app.use('/users', users)
+
+app.get('/', function(req, res, next){
+  res.render('home', {});
+});
+
+app.get('/signup', function(req, res, next){
+  res.render('signup', {});
+});
 
 app.post("/addData", function(req, res, next){
   var username = req.body.username;
@@ -59,7 +70,6 @@ app.post("/addData", function(req, res, next){
       console.log(result);
     });
   });
-
 });
 /*
 var addData = function(thanksFrontend) {
@@ -422,7 +432,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
+    res.render('404', {
       message: err.message,
       error: err
     });
@@ -433,9 +443,9 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
-  res.render('error', {
+  res.render('404', {
     message: err.message,
-    error: {}
+    error: err
   });
 });
 
