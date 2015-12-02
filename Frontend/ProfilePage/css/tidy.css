@@ -286,26 +286,38 @@ h2
 	border-style:solid;
 	float:left;
 	width:33.333333%;
-	text-align:center;
+	text-align:left;
 }
 
 .torsoSelection
 {
-	padding:50px;
+	padding:30px;
 	border-style:solid;
 	float:left;
-	width:33.333333%;
+	width:25%;
 	text-align:center;
 	background-image:url(../Assets/shirtBackground.png);
 	background-size:cover;
 }
 
-.legSelection
+.coatSelection
 {
-	padding:50px;
+	padding:30px;
 	border-style:solid;
 	float:left;
-	width:33.333333%;
+	width:25%;
+	text-align:center;
+	background-image:url(../Assets/shirtBackground.png);
+	background-size:cover;
+
+}
+
+.legSelection
+{
+	padding:30px;
+	border-style:solid;
+	float:left;
+	width:25%;
 	text-align:center;
 	background-image:url(../Assets/pantsBackground.png);
 	background-size:cover;
@@ -314,13 +326,14 @@ h2
 
 .extraSelection
 {
-	padding:50px;
+	padding:30px;
 	border-style:solid;
 	float:left;
-	width:33.333333%;
+	width:25%;
 	text-align:center;
 	background-image:url(../Assets/accessoryBackground.png);
 	background-size:cover;
+
 }
 
 .profileImage
@@ -334,6 +347,7 @@ h2
 	padding:15px;
 	float:left;
 	text-align:left;
+
 }
 
 .formatting
@@ -346,6 +360,7 @@ h2
 	padding:50px;
 	border-style:solid;
 	text-align:center;
+
 }
 
 @media (min-width: 800px) and (max-width: 1100px) 
