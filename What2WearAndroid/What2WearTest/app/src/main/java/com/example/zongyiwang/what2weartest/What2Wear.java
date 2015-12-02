@@ -1,5 +1,6 @@
 package com.example.zongyiwang.what2weartest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.util.Log;
 
 public class What2Wear extends AppCompatActivity {
 
@@ -48,5 +50,13 @@ public class What2Wear extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void OnClick(View view)
+    {
+        //button will redirect to the profilepage NEED TO CHANGE TO LOGIN PAGE to wear
+        Intent profilePage = getIntent();
+        profilePage = new Intent(this,ProfileinfoActivity.class);
+        startActivity(profilePage);
     }
 }

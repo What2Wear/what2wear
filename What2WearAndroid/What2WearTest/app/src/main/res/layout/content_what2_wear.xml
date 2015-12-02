@@ -29,7 +29,8 @@
         android:textSize="18dp"
         android:layout_marginTop="37dp"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="toProfile"/>
 
     <TextView android:text="What2Wear" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
