@@ -11,6 +11,7 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 var ejslocals = require('ejs-locals');
+var http = require('http');
 
 /**
  * Load controllers.
