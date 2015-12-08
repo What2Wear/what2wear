@@ -62,6 +62,73 @@ app.use(connectAssets({
   paths: ['public/css', 'public/js'],
   helperContext: app.locals
 }));
+
+
+app.post('/request', function(req, res, next){
+  var message = req.body.Body;
+  var from = req.body.From;
+  console.log('From: ' + from + ', Message: ' + message);
+
+  var options = {
+    host: 'api.openweathermap.org',
+    path: '/data/2.5/weather?zip='+message+',us&APPID=fcea7f4623776b63cfdc51b2fab81310'
+  };
+
+  callback = function(response)
+  {
+    var str = '';
+
+    //another chunk of data has been recieved, so append it to `str`
+    response.on('data', function (chunk) {
+      str += chunk;
+    });
+
+    //the whole response has been recieved, so we just print it out here
+    response.on('end', function () {
+      console.log(str);
+      // res.send(JSON.parse(str));
+      var data = JSON.parse(str);
+      var tID = data.weather[0].id;
+      var tempu = data.main.temp;
+      var main = data.weather[0].main;
+      var fTemp = Math.floor((tempu*9/5) - 459.67);
+      var comfortState = temperature_old(fTemp);
+
+      var r = false;
+      var s = false;
+      var sun = false;
+
+      if ((tID==800)||(tID==801))
+      {
+        sun = true;
+      }
+      if (Math.floor(tID/100)==6)
+      {
+        s = true;
+      }
+      if ((Math.floor(tID/100)==5)||(Math.floor(tID/100)==3)||(Math.floor(tID/100)==2))
+      {
+        r = true;
+      }
+
+      var w = w2w_old(comfortState, r, s, sun);
+
+      client.messages.create({
+          body: "Thanks! \n| "+ w + "\n| " + fTemp + "\n| " + main + "\n| " + tID,
+          to: from,
+          from: "+13313056064"
+      }, function(err, message) {
+          process.stdout.write(message.sid);
+          console.log("\ndone\n");
+      });
+      res.write('done');
+      res.end();
+    });
+  }
+
+  http.request(options, callback).end();
+});
+
 app.use(express.compress());
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -149,71 +216,6 @@ app.get('/api/twitter', passportConf.isAuthenticated, passportConf.isAuthorized,
 app.get('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getVenmo);
 app.post('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.postVenmo);
 app.get('/api/linkedin', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getLinkedin);
-
-app.post('/request', function(req, res, next){
-  var message = req.body.Body;
-  var from = req.body.From;
-  console.log('From: ' + from + ', Message: ' + message);
-
-  var options = {
-    host: 'api.openweathermap.org',
-    path: '/data/2.5/weather?zip='+message+',us&APPID=fcea7f4623776b63cfdc51b2fab81310'
-  };
-
-  callback = function(response)
-  {
-    var str = '';
-
-    //another chunk of data has been recieved, so append it to `str`
-    response.on('data', function (chunk) {
-      str += chunk;
-    });
-
-    //the whole response has been recieved, so we just print it out here
-    response.on('end', function () {
-      console.log(str);
-      // res.send(JSON.parse(str));
-      var data = JSON.parse(str);
-      var tID = data.weather[0].id;
-      var tempu = data.main.temp;
-      var main = data.weather[0].main;
-      var fTemp = Math.floor((tempu*9/5) - 459.67);
-      var comfortState = temperature_old(fTemp);
-
-      var r = false;
-      var s = false;
-      var sun = false;
-
-      if ((tID==800)||(tID==801))
-      {
-        sun = true;
-      }
-      if (Math.floor(tID/100)==6)
-      {
-        s = true;
-      }
-      if ((Math.floor(tID/100)==5)||(Math.floor(tID/100)==3)||(Math.floor(tID/100)==2))
-      {
-        r = true;
-      }
-
-      var w = w2w_old(comfortState, r, s, sun);
-
-      client.messages.create({
-          body: "Thanks! \n| "+ w + "\n| " + fTemp + "\n| " + main + "\n| " + tID,
-          to: from,
-          from: "+13313056064"
-      }, function(err, message) {
-          process.stdout.write(message.sid);
-          console.log("\ndone\n");
-      });
-      res.write('done');
-      res.end();
-    });
-  }
-
-  http.request(options, callback).end();
-});
 
 /**
  * OAuth routes for sign-in.
