@@ -10,7 +10,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_what2_wear" tools:context=".What2Wear"
     android:clickable="false"
-    android:background="#0011ff">
+    android:background="#5e9dfc">
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -21,10 +21,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button"
-        android:id="@+id/button"
-        android:textColor="#00FF00"
-        android:background="#ff0000"
+        android:text="@string/signIn"
+        android:id="@+id/signIn"
+        android:textColor="#ff7300"
         android:width="150dp"
         android:textSize="18dp"
         android:layout_marginTop="37dp"
@@ -34,10 +33,23 @@
 
     <TextView android:text="What2Wear" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
         android:textSize="60dp"
-        android:textColor="#FFD300"
+        android:textColor="#ffaa00"
         android:id="@+id/textView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signUp"
+        android:id="@+id/signUp"
+        android:textColor="#ff7300"
+        android:width="150dp"
+        android:textSize="18dp"
+        android:onClick="toProfile"
+        android:layout_below="@+id/signIn"
+        android:layout_alignLeft="@+id/signIn"
+        android:layout_alignStart="@+id/signIn" />
 </RelativeLayout>

@@ -6,10 +6,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.util.Log;
+import android.view.View;
 
 public class What2Wear extends AppCompatActivity {
 
@@ -52,7 +51,7 @@ public class What2Wear extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void OnClick(View view)
+    public void toProfile(View view)
     {
         //button will redirect to the profilepage NEED TO CHANGE TO LOGIN PAGE to wear
         Intent profilePage = getIntent();
