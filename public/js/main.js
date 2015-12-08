@@ -12,5 +12,7 @@ $(document).ready(function(){
     window.location = "/";
   });
 
-  $("#sign_in")
+  $("#sign_in").click(function(e){
+
+  });
 });
