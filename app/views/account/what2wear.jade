@@ -4,11 +4,9 @@ block content
   .page-header
     h3 what2wear
   
-  span #{title}
-  span #{what2wear}
-  span #{temp}
-  span #{main}
-  span #{tID}
+  h2.text-center It's #{temp} outside,
+  h3.text-center here's what you should wear:
+  h1.text-center #{what2wear}
   
   h3 Text me!
   form.form-horizontal(action='/textme', method='POST')
