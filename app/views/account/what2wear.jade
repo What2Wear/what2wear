@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  .page-header
+    h3 what2wear
+  
+  span #{title}
+  span #{what2wear}
+  span #{temp}
+  span #{main}
+  span #{tID}
+  
+  h3 Text me!
+  form.form-horizontal(action='/textme', method='POST')
+    input(type='hidden', name='_csrf', value=token)
+    .form-group
+      label.col-sm-3.control-label(for='password') Your number
+      .col-sm-4
+        input.form-control(type='text', name='number', id='number')
+    .form-group
+      .col-sm-offset-3.col-sm-4
+        button.btn.btn.btn-primary(type='submit')
+          i.fa.fa-2x.fa-mobile

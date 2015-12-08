@@ -1,0 +1,57 @@
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Project Name</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="<%= (title == 'Home')? 'active':'' %>">
+                <a href="/">Home</a>
+            </li>
+            <li class="<%= (title == 'API Browser')? 'active':'' %>">
+                <a href="/api">API Browser</a>
+            </li>
+            <li class="<%= (title == 'Contact')? 'active':'' %>">
+                <a href="/contact">Contact</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <% if (!user) {%>
+                <li class="<%= (title == 'Login')? 'active':'' %>">
+                    <a href="/login">Login</a>
+                </li>
+                <% if (secrets.localAuth)  { %>
+                    <li class="<%= (title == 'Create Account')? 'active':'' %>">
+                        <a href="/signup">Create Account</a>
+                    </li>
+                <% } %>
+            <% } else { %>
+                <li class="dropdown <%= (title == 'Account Management')? 'active':'' %>">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                        <% if (user.profile.picture) { %>
+                            <img class="profile-image" src="<%= user.profile.picture %>">
+                        <% } else { %>
+                            <img class="profile-image" src="<%= user.gravatar(60) %>">
+                        <% } %>
+                        <%= (user.profile.name || user.profile.email || user.profile.id) %>&nbsp;
+                        <i class="caret"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/account">My Account</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="/logout">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</div>
