@@ -62,6 +62,21 @@ app.use(connectAssets({
   paths: ['public/css', 'public/js'],
   helperContext: app.locals
 }));
+app.use(express.compress());
+app.use(express.favicon());
+app.use(express.logger('dev'));
+app.use(express.cookieParser());
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(expressValidator());
+app.use(express.methodOverride());
+app.use(express.session({
+  secret: secrets.sessionSecret,
+  store: new MongoStore({
+    url: secrets.db,
+    auto_reconnect: true
+  })
+}));
 
 
 app.post('/request', function(req, res, next){
@@ -129,21 +144,7 @@ app.post('/request', function(req, res, next){
   http.request(options, callback).end();
 });
 
-app.use(express.compress());
-app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.cookieParser());
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(expressValidator());
-app.use(express.methodOverride());
-app.use(express.session({
-  secret: secrets.sessionSecret,
-  store: new MongoStore({
-    url: secrets.db,
-    auto_reconnect: true
-  })
-}));
+
 app.use(express.csrf());
 app.use(passport.initialize());
 app.use(passport.session());
