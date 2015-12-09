@@ -169,9 +169,9 @@ exports.textme = function(req, res, next) {
           process.stdout.write(message.sid);
           console.log("\ndone\n");
           if (err) return next(err);
-          req.flash('success', { msg: 'Message sent!' });
-          res.redirect('/');
       });
+      req.flash('success', { msg: 'Message sent!' });
+      res.redirect('/');
     });
   }
 
