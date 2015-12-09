@@ -170,7 +170,7 @@ exports.textme = function(req, res, next) {
           console.log("\ndone\n");
           if (err) return next(err);
           req.flash('success', { msg: 'Message sent!' });
-          req.redirect('/what2wear');
+          res.redirect('/');
       });
     });
   }
