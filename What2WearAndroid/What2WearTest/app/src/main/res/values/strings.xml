@@ -1,22 +1,32 @@
 <resources>
-    <string name="app_name">What2WearTest</string>
-    <string name="action_settings">Settings</string>
-    <string name="signIn">Sign In</string>
-    <string name="signUp">Sign Up</string>
-    <string name="edit_message">Enter a message</string>
-    <string name="title_activity_main">MainActivity</string>
+<string name="app_name">What2WearTest</string>
+<string name="action_settings">Settings</string>
+<string name="signIn">Sign In</string>
+<string name="signUp">Sign Up</string>
+<string name="edit_message">Enter a message</string>
+<string name="title_activity_main">MainActivity</string>
 
-    <string name="profileinfo_mainTitle">Let\'s Start Your Day Off Right!</string>
-    <string name="profileinfo_name">Name: </string>
-    <string name="profileinfo_gender">Gender: </string>
-    <string name="profileinfo_location">Location: </string>
-    <string name="profileinfo_phone">Phone: </string>
-    <string name="profileinfo_button_w2wear">What 2 Wear!</string>
-    <string name="profileinfo_button_changeProfile">Change your Profile</string>
-    <string name="title_activity_what2_wear_weather_clothing">what2_wear_weather_clothing</string>
+<string name="profileinfo_mainTitle">Let\'s Start Your Day Off Right!</string>
+<string name="profileinfo_name">Name: </string>
+<string name="profileinfo_gender">Gender: </string>
+<string name="profileinfo_location">Location: </string>
+<string name="profileinfo_phone">Phone: </string>
+<string name="profileinfo_button_w2wear">What 2 Wear!</string>
+<string name="title_activity_what2_wear_weather_clothing">what2_wear_weather_clothing</string>
+<string name="profileinfo_button_changeProfile">Change your Profile</string>
 
-    <string name="OpenWeatherAPIKEY">d9d69e1987490d237de0d75e57eb087f</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+<string name="Hint_username">Username</string>
+<string name="Hint_email">Email</string>
+<string name="Hint_password">Password</string>
+<string name="Hint_zipcode">Zip Code</string>
+<string name="Hint_coldTemp">Cold Temperature (Degrees)</string>
+<string name="Hint_chillyTemp">Chilly Temperature (Degrees)</string>
+<string name="Hint_comfortableTemp">Comfortable Temperature (Degrees)</string>
+<string name="Hint_warmTemp">Warm Temperature (Degrees)</string>
+
+<string name="OpenWeatherAPIKEY">d9d69e1987490d237de0d75e57eb087f</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+<string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

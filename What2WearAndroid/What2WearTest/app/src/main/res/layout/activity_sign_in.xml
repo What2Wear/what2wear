@@ -19,21 +19,20 @@
         android:layout_width="259dp"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Username"
         android:ems="10"
-        android:id="@+id/editText8"
+        android:id="@+id/LI_username"
         android:editable="false"
         android:paddingTop="30dp"
-        android:textColor="#000000" />
+        android:hint="@string/Hint_username" />
 
     <EditText
         android:layout_width="259dp"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText9"
-        android:text="Password"
-        android:textColor="#000000" />
+        android:id="@+id/LI_password"
+        android:textColor="#000000"
+        android:hint="@string/Hint_password"/>
 
     <Button
         android:layout_width="wrap_content"
