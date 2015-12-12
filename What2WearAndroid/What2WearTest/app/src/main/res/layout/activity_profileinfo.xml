@@ -96,7 +96,7 @@
             android:id="@+id/button_change"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
-            android:onClick="GetWhat2Wear"
+            android:onClick="toChangeProfile"
             android:textColor="#00ffe1"
             android:textSize="15dp"
             android:layout_below="@+id/textView6"
@@ -113,7 +113,7 @@
             android:onClick="GetWhat2Wear"
             android:textColor="#ff7300"
             android:layout_below="@+id/button_change"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:layout_centerHorizontal="true" />
 
 
