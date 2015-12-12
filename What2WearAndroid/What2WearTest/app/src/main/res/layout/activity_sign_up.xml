@@ -1,153 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5e9dfc"
-    android:gravity="center_horizontal"
-    android:weightSum="1">
+    android:fillViewport="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Let&apos;s Get Started!"
-        android:id="@+id/textView7"
-        android:layout_gravity="center_horizontal"
-        android:paddingTop="15dp"
-        android:textColor="#ffffff" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#5e9dfc"
+        android:gravity="center_horizontal"
+        android:weightSum="1"
+        android:fillViewport="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="We&apos;ll start off by gathering some info..."
-        android:id="@+id/textView8"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#ffffff" />
-
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Username"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:editable="false"
-        android:paddingTop="15dp"
-        android:textColor="#000000" />
-
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_gravity="center_horizontal"
-        android:text="Email"
-        android:textColor="#000000" />
-
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editText3"
-        android:layout_gravity="center_horizontal"
-        android:text="Password"
-        android:textColor="#000000" />
-
-    <EditText
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:text="Zipcode"
-        android:ems="10"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/editText10"
-        android:textSize="12dp"
-        android:textColor="#000000" />
-
-
-    <EditText
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText4"
-        android:layout_gravity="center_horizontal"
-        android:text="Cold Temperature (Degrees)"
-        android:textSize="12dp" />
-
-    <EditText
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText5"
-        android:layout_gravity="center_horizontal"
-        android:text="Chilly (Degrees)"
-        android:textSize="12dp" />
-
-    <EditText
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText6"
-        android:layout_gravity="center_horizontal"
-        android:textSize="12dp"
-        android:text="Comfortable (Degrees)" />
-
-    <EditText
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText7"
-        android:layout_gravity="center_horizontal"
-        android:textSize="12dp"
-        android:text="Warm (Degrees)" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Gender:"
-        android:id="@+id/textView9"
-        android:layout_gravity="center_horizontal"
-        android:paddingTop="8dp"
-        android:textColor="#000000" />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
-
-        <RadioButton
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Male"
-            android:id="@+id/radioButton2"
-            android:checked="false"
-            android:layout_gravity="left"
-            android:textColor="#000000" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Let's Get Started!"
+            android:id="@+id/textView7"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:textColor="#ffffff" />
 
-        <RadioButton
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Female"
-            android:id="@+id/radioButton"
-            android:checked="false"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="We'll start off by gathering some info..."
+            android:id="@+id/textView8"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff" />
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Username"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:editable="false"
+            android:paddingTop="15dp"
             android:textColor="#000000" />
-    </RadioGroup>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/submit"
-        android:layout_gravity="center_horizontal"
-        android:onClick="toMain"
-        android:textColor="#ff7300" />
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:layout_gravity="center_horizontal"
+            android:text="Email"
+            android:textColor="#000000" />
 
-</LinearLayout>
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/editText3"
+            android:layout_gravity="center_horizontal"
+            android:text="Password"
+            android:textColor="#000000" />
+
+        <EditText
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:text="Zipcode"
+            android:ems="10"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/editText10"
+            android:textSize="14dp"
+            android:textColor="#000000" />
+
+
+        <EditText
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText4"
+            android:layout_gravity="center_horizontal"
+            android:text="Cold Temperature (Fahrenheit)"
+            android:textSize="14dp" />
+
+        <EditText
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText5"
+            android:layout_gravity="center_horizontal"
+            android:text="Chilly (Fahrenheit)"
+            android:textSize="14dp" />
+
+        <EditText
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText6"
+            android:layout_gravity="center_horizontal"
+            android:textSize="14dp"
+            android:text="Comfortable (Fahrenheit)" />
+
+        <EditText
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText7"
+            android:layout_gravity="center_horizontal"
+            android:textSize="14dp"
+            android:text="Warm (Fahrenheit)" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Gender:"
+            android:id="@+id/textView9"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:textColor="#000000" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:id="@+id/radioButton2"
+                android:checked="false"
+                android:layout_gravity="left"
+                android:textColor="#000000" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                android:id="@+id/radioButton"
+                android:checked="false"
+                android:textColor="#000000" />
+        </RadioGroup>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:id="@+id/submit"
+            android:layout_gravity="center_horizontal"
+            android:onClick="toMain"
+            android:textColor="#ff7300" />
+    </LinearLayout>
+
+</ScrollView>

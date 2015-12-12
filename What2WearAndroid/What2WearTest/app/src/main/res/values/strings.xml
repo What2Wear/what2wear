@@ -12,6 +12,7 @@
     <string name="profileinfo_location">Location: </string>
     <string name="profileinfo_phone">Phone: </string>
     <string name="profileinfo_button_w2wear">What 2 Wear!</string>
+    <string name="profileinfo_button_changeProfile">Change your Profile</string>
     <string name="title_activity_what2_wear_weather_clothing">what2_wear_weather_clothing</string>
 
     <string name="OpenWeatherAPIKEY">d9d69e1987490d237de0d75e57eb087f</string>
