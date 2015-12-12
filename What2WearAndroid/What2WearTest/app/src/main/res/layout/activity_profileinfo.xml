@@ -113,7 +113,7 @@
             android:onClick="GetWhat2Wear"
             android:textColor="#ff7300"
             android:layout_below="@+id/button_change"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="40dp"
             android:layout_centerHorizontal="true" />
 
 
