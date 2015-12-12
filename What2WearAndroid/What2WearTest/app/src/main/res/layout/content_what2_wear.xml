@@ -29,7 +29,7 @@
         android:layout_marginTop="37dp"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:onClick="toProfile"/>
+        android:onClick="toSignUp"/>
 
     <TextView android:text="What2Wear" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
         android:textColor="#ff7300"
         android:width="150dp"
         android:textSize="18dp"
-        android:onClick="toProfile"
+        android:onClick="toLogIn"
         android:layout_below="@+id/signIn"
         android:layout_alignLeft="@+id/signIn"
         android:layout_alignStart="@+id/signIn" />
