@@ -18,6 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".sign_in"></activity>
+        <activity android:name=".sign_up"></activity>
         <activity android:name=".ProfileinfoActivity" />
         <activity android:name=".what2wear_weather"></activity>
     </application>

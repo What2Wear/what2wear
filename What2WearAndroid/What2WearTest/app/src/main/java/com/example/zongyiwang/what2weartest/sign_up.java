@@ -16,12 +16,11 @@ public class sign_up extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
     }
     public void toMain(View view)
     {
-        Intent backToMain = getIntent();
-        backToMain = new Intent(this,What2Wear.class);
-        startActivity(backToMain);
+        Intent toLogin = getIntent();
+        toLogin = new Intent(this,sign_in.class);
+        startActivity(toLogin);
     }
 }

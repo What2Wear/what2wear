@@ -18,8 +18,6 @@ public class ProfileinfoActivity extends AppCompatActivity {
     }
 
     public void GetWhat2Wear(View view) {
-        //System.out.println("WHAT2WEAR!!");
-        //button will redirect to the weather+clothing to wear
         Intent what2wear = getIntent();
         what2wear = new Intent(this,what2wear_weather.class);
         startActivity(what2wear);
