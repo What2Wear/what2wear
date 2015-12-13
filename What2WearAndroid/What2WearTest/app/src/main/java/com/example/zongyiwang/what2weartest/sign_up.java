@@ -89,6 +89,9 @@ public class sign_up extends AppCompatActivity
         //sign up succeeded open up login in page
         if(!errorFlag)
         {
+            //TODO: GATHER DATA FROM FIELDS AND IMPLEMENT DATA PUSH TO SERVER
+
+
             Intent toLogin = getIntent();
             toLogin = new Intent(this,sign_in.class);
             startActivity(toLogin);

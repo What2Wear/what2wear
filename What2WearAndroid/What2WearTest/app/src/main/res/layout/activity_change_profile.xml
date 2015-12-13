@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Here you can change you profile"
+        android:text="Here you can change your profile"
         android:id="@+id/changeView"
         android:paddingTop="20dp"
         android:textSize="23dp"
@@ -112,7 +112,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Gender:"
-        android:id="@+id/changeGender"
+        android:id="@+id/GenderTitle"
         android:layout_gravity="center_horizontal"
         android:paddingTop="8dp"
         android:textColor="#000000" />
@@ -120,7 +120,8 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/ChangeGender">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -129,7 +130,8 @@
             android:id="@+id/radioButton3"
             android:checked="false"
             android:layout_gravity="left"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:theme="@style/_UIUC" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -137,13 +139,14 @@
             android:text="Female"
             android:id="@+id/radioButton4"
             android:checked="false"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:theme="@style/_UIUC" />
     </RadioGroup>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="Submit Changes"
         android:id="@+id/submit2"
         android:layout_gravity="center_horizontal"
         android:onClick="changeToProfile"
