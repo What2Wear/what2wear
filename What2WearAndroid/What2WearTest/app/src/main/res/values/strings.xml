@@ -24,7 +24,7 @@
 <string name="Hint_chillyTemp">Chilly Temperature (Degrees)</string>
 <string name="Hint_comfortableTemp">Comfortable Temperature (Degrees)</string>
 <string name="Hint_warmTemp">Warm Temperature (Degrees)</string>
-
+<string name="Hint_comfirmPass">Confirm Password</string>
 <string name="OpenWeatherAPIKEY">d9d69e1987490d237de0d75e57eb087f</string>
 
 <!-- TODO: Remove or change this placeholder text -->
