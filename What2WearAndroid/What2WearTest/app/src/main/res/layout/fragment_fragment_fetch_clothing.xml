@@ -1,13 +1,50 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#5e9dfc"
     tools:context="com.example.zongyiwang.what2weartest.fragment_fetchClothing">
 
     <!-- TODO: Update blank fragment layout -->
+
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text = " The Temperature right now is:"
+        android:textSize="23dp"
+        android:id="@+id/fragment_title1"
+        android:paddingTop="30dp"
+        android:layout_gravity="left" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:paddingTop="80dp"
+        android:id="@+id/fragment_temp"
+        android:layout_gravity="left"
+        android:textSize="20dp"
+        android:text = " Fahrenheit" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="170dp"
+        android:id="@+id/fragment_title2"
+        android:layout_gravity="left"
+        android:textSize="23dp"
+        android:text = " And here is what you should wear: "/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:paddingTop="220dp"
+        android:id="@+id/fragmet_w2w"
+        android:layout_gravity="left"
+        android:textSize="20dp"
+        android:text = " asfafss "/>
+
+
+
 
 </FrameLayout>

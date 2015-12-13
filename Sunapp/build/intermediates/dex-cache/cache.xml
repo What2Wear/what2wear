@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/Users/zongyiwang/Sunshine-Version-2/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/jars/libs/internal_impl-21.0.2.jar"
+        jar="/Users/zongyiwang/Desktop/what2wear/Sunapp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/jars/libs/internal_impl-21.0.2.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="962e8b12569c56dbdcf8367eb4eac8bb129cd18f">
-        <dex dex="/Users/zongyiwang/Sunshine-Version-2/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.2-86c9dc0cea94cea518f1c04aec9f29e5e241b68d.jar" />
+        <dex dex="/Users/zongyiwang/Desktop/what2wear/Sunapp/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.2-a9ae7b70517769aac19f82b6fdd9542c0590baa7.jar" />
     </item>
     <item
-        jar="/Users/zongyiwang/Sunshine-Version-2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="7ae2d38807a43b2f2185ff4089a92c790b579e54">
-        <dex dex="/Users/zongyiwang/Sunshine-Version-2/app/build/intermediates/pre-dexed/debug/classes-174fe91b98d02107ddacb0434f365e1473af11c0.jar" />
-    </item>
-    <item
-        jar="/Users/zongyiwang/Sunshine-Version-2/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="d1bf02de1c56d942e7a9d093b8610ba1ef4128e3">
-        <dex dex="/Users/zongyiwang/Sunshine-Version-2/app/build/intermediates/pre-dexed/debug/classes-b1b4bb7957e0f3c888e684e56fb8a4a1dd817441.jar" />
-    </item>
-    <item
-        jar="/Users/zongyiwang/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.2/support-annotations-21.0.2.jar"
+        jar="/Users/zongyiwang/Coding/CS125-v001-mac-64bit/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.2/support-annotations-21.0.2.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="99373741f99a0556ee293c41e8faa1ca3ae8a4e6">
-        <dex dex="/Users/zongyiwang/Sunshine-Version-2/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.2-48c58d412143cd59f98e734bee287d337ffeb578.jar" />
+        <dex dex="/Users/zongyiwang/Desktop/what2wear/Sunapp/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.2-76ef86bbf08a63a938c9c9597bad70ae87b84b5d.jar" />
+    </item>
+    <item
+        jar="/Users/zongyiwang/Desktop/what2wear/Sunapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7ae2d38807a43b2f2185ff4089a92c790b579e54">
+        <dex dex="/Users/zongyiwang/Desktop/what2wear/Sunapp/app/build/intermediates/pre-dexed/debug/classes-7122ebad274c29831a02e356607995916717e210.jar" />
+    </item>
+    <item
+        jar="/Users/zongyiwang/Desktop/what2wear/Sunapp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d1bf02de1c56d942e7a9d093b8610ba1ef4128e3">
+        <dex dex="/Users/zongyiwang/Desktop/what2wear/Sunapp/app/build/intermediates/pre-dexed/debug/classes-661e79ee88fce8124d93140f7ed512d0627c7d24.jar" />
     </item>
 
 </items>
