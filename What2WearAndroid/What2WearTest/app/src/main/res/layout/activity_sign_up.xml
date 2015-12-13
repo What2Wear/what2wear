@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editText3"
+            android:id="@+id/password"
             android:layout_gravity="center_horizontal"
             android:textColor="#000000"
             android:hint="@string/Hint_password" />
@@ -134,7 +134,8 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/gender">
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -143,7 +144,9 @@
                 android:id="@+id/radioButton2"
                 android:checked="false"
                 android:layout_gravity="left"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                style="@style/_UIUC"
+                android:theme="@style/_UIUC" />
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -151,7 +154,8 @@
                 android:text="Female"
                 android:id="@+id/radioButton"
                 android:checked="false"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:theme="@style/_UIUC" />
         </RadioGroup>
 
         <Button
