@@ -1,50 +1,51 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5e9dfc"
-    tools:context="com.example.zongyiwang.what2weartest.fragment_fetchClothing">
+    android:background="#99c2ff"
+    tools:context="com.example.zongyiwang.what2weartest.fragment_fetchClothing"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp">
 
     <!-- TODO: Update blank fragment layout -->
 
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = " The Temperature right now is:"
-        android:textSize="23dp"
+        android:text = "Current Temperature is:"
+        android:textSize="25dp"
         android:id="@+id/fragment_title1"
         android:paddingTop="30dp"
-        android:layout_gravity="left" />
+        android:layout_gravity="center_horizontal" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:paddingTop="80dp"
         android:id="@+id/fragment_temp"
-        android:layout_gravity="left"
         android:textSize="20dp"
-        android:text = " Fahrenheit" />
+        android:text = "999"
+        android:paddingTop="20dp"
+        android:layout_gravity="center_horizontal" />
+
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="170dp"
         android:id="@+id/fragment_title2"
-        android:layout_gravity="left"
-        android:textSize="23dp"
-        android:text = " And here is what you should wear: "/>
+        android:textSize="30dp"
+        android:text = "Here is what to wear: "
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="50dp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:paddingTop="220dp"
         android:id="@+id/fragmet_w2w"
         android:layout_gravity="left"
         android:textSize="20dp"
-        android:text = " asfafss "/>
+        android:text = "asfafss "
+        android:paddingTop="20dp" />
 
 
-
-
-</FrameLayout>
+</LinearLayout>
