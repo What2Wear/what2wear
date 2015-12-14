@@ -35,8 +35,8 @@
         android:layout_height="110dp"
         android:id="@+id/tempImage"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/defaultTemp"
-        android:layout_weight="0.17" />
+        android:layout_weight="0.17"
+        android:src="@drawable/default_temp" />
 
     <TextView
         android:layout_width="wrap_content"
