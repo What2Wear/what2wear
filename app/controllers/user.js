@@ -17,86 +17,73 @@ exports.getwhat2wear = function(req, res)
 {
   if (req.user)
   {
-    var options = {
-      host: 'api.openweathermap.org',
-      path: '/data/2.5/weather?zip='+req.user.profile.location+',us&APPID=fcea7f4623776b63cfdc51b2fab81310'
-    };
 
-    callback = function(response)
+    var isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(req.user.profile.location);
+    var validPreferences = req.user.profile.cold != "" && req.user.profile.chilly != "" && req.user.profile.comf != "" && req.user.profile.warm != "";
+
+    if (isValidZip && validPreferences)
     {
-      var str = '';
+      var options = {
+        host: 'api.openweathermap.org',
+        path: '/data/2.5/weather?zip='+req.user.profile.location+',us&APPID=fcea7f4623776b63cfdc51b2fab81310'
+      };
 
-      //another chunk of data has been recieved, so append it to `str`
-      response.on('data', function (chunk) {
-        str += chunk;
-      });
+      callback = function(response)
+      {
+        var str = '';
 
-      //the whole response has been recieved, so we just print it out here
-      response.on('end', function () {
-        // console.log(str);
-        // res.send(JSON.parse(str));
-        var data = JSON.parse(str);
-        var tID = data.weather[0].id;
-        var tempu = data.main.temp;
-        var main = data.weather[0].main;
-        var fTemp = Math.floor((tempu*9/5) - 459.67);
-        var comfortState = temperature_old(fTemp);
-
-        var rain = false;
-        var snow = false;
-        var sun = false;
-
-        if ((tID==800)||(tID==801))
-        {
-          sun = true;
-        }
-        if (Math.floor(tID/100)==6)
-        {
-          snow = true;
-        }
-        if ((Math.floor(tID/100)==5)||(Math.floor(tID/100)==3)||(Math.floor(tID/100)==2))
-        {
-          rain = true;
-        }
-
-        // var w = w2w_old(comfortState, r, s, sun);
-        var gender = (req.user.profile.gender == "female");
-        var w = what2wearController.w2w(fTemp, gender, rain, snow, sun, req.user.profile.cold, req.user.profile.chilly, req.user.profile.comf, req.user.profile.warm);
-
-        // async.waterfall([
-        //   function(callback) {
-        //     var w = what2wearController.w2w(fTemp, gender, rain, snow, sun, req.user.profile.cold, req.user.profile.chilly, req.user.profile.comf, req.user.profile.warm);
-        //     console.log("RESULT FROM W");
-        //     console.log(w);
-        //     callback(null, w);
-        //   },
-        //   function(arg1, callback) {
-        //     res.render('account/what2wear', {
-        //       title: 'What 2 Wear',
-        //       what2wear: arg1,
-        //       temp: fTemp,
-        //       main: main,
-        //       tID: tID
-        //     });
-        //     callback(null, 'done');
-        //   }
-        // ], function(err, result) {
-        //   if (err) console.log(err);
-        // });
-
-
-
-        res.render('account/what2wear', {
-          title: 'What 2 Wear',
-          what2wear: w,
-          temp: fTemp,
-          main: main,
-          tID: tID
+        //another chunk of data has been recieved, so append it to `str`
+        response.on('data', function (chunk) {
+          str += chunk;
         });
-      });
-    }
 
-    http.request(options, callback).end();
+        //the whole response has been recieved, so we just print it out here
+        response.on('end', function () {
+          var data = JSON.parse(str);
+          var tID = data.weather[0].id;
+          var tempu = data.main.temp;
+          var main = data.weather[0].main;
+          var fTemp = Math.floor((tempu*9/5) - 459.67);
+          var comfortState = temperature_old(fTemp);
+
+          var rain = false;
+          var snow = false;
+          var sun = false;
+
+          if ((tID==800)||(tID==801))
+          {
+            sun = true;
+          }
+          if (Math.floor(tID/100)==6)
+          {
+            snow = true;
+          }
+          if ((Math.floor(tID/100)==5)||(Math.floor(tID/100)==3)||(Math.floor(tID/100)==2))
+          {
+            rain = true;
+          }
+
+          // var w = w2w_old(comfortState, r, s, sun);
+          var gender = (req.user.profile.gender == "female");
+          var w = what2wearController.w2w(fTemp, gender, rain, snow, sun, req.user.profile.cold, req.user.profile.chilly, req.user.profile.comf, req.user.profile.warm);
+
+          res.render('account/what2wear', {
+            title: 'What 2 Wear',
+            what2wear: w,
+            temp: fTemp,
+            main: main,
+            tID: tID
+          });
+        });
+      }
+
+      http.request(options, callback).end();
+    }
+    else {
+      res.redirect('/account');
+      // req.flash('error', { msg: 'Profile not properly updated.' });
+      // req.flash('error', { msg: 'Profile not properly updated.' });
+    }
   }
   else {
     res.render('account/login', {
